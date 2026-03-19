@@ -1,0 +1,3 @@
+/home/DATA/CODE/code/particle_life/build/CMakeFiles/particle_life.dir
+/home/DATA/CODE/code/particle_life/build/CMakeFiles/edit_cache.dir
+/home/DATA/CODE/code/particle_life/build/CMakeFiles/rebuild_cache.dir
