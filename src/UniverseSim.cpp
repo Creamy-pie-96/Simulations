@@ -263,7 +263,6 @@ void UniverseSim::checkMergers()
 
             // Collisionless stellar dynamics: no star-star/particle-star merging.
             continue;
-
         }
     }
 }
@@ -355,9 +354,16 @@ void UniverseSim::update(float dt)
                 {
                     float d = std::sqrt(d2);
                     float sign = static_cast<float>(mouseMode);
-                    float f = sign * std::max(0.0f, 1.0f - d / 9000.0f) * 80.0f;
-                    ax[i] += (dx / d) * f / std::max(1.0f, bodies[i].mass);
-                    ay[i] += (dy / d) * f / std::max(1.0f, bodies[i].mass);
+                    float f = sign * std::max(0.0f, 1.0f - d / 14000.0f) * 26.0f;
+                    float massScale = std::sqrt(std::max(1.0f, bodies[i].mass));
+                    float addx = (dx / d) * f / massScale;
+                    float addy = (dy / d) * f / massScale;
+
+                    const float aCap = 0.045f;
+                    addx = std::clamp(addx, -aCap, aCap);
+                    addy = std::clamp(addy, -aCap, aCap);
+                    ax[i] += addx;
+                    ay[i] += addy;
                 }
             }
         }
@@ -438,9 +444,28 @@ void UniverseSim::draw(SDL_Renderer *renderer)
         SDL_RenderClear(renderer);
     }
 
-    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     const float cx = width * 0.5f;
     const float cy = height * 0.5f;
+
+    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_ADD);
+    for (const auto &b : bodies)
+    {
+        if (!b.alive || b.kind == 2)
+            continue;
+
+        SDL_FPoint s = worldToScreen(b.x, b.y, cx, cy);
+        const float lum = std::clamp((b.mass - 2.0f) / 120.0f, 0.0f, 1.0f);
+        SDL_SetRenderDrawColor(renderer, b.color.r, b.color.g, b.color.b, static_cast<Uint8>(18 + lum * 42.0f));
+
+        for (int k = 0; k < 3; k++)
+        {
+            float jx = std::sin((b.x + k * 9.0f) * 0.0057f) * (1.0f + lum * 2.0f);
+            float jy = std::cos((b.y + k * 7.0f) * 0.0052f) * (1.0f + lum * 2.0f);
+            SDL_RenderDrawPoint(renderer, static_cast<int>(s.x + jx), static_cast<int>(s.y + jy));
+        }
+    }
+
+    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 
     for (const auto &b : bodies)
     {
@@ -471,7 +496,7 @@ void UniverseSim::draw(SDL_Renderer *renderer)
 
 void UniverseSim::increaseSpeed()
 {
-    timeScale = std::min(3.5f, timeScale + 0.1f);
+    timeScale = std::min(8.0f, timeScale + 0.1f);
 }
 
 void UniverseSim::decreaseSpeed()

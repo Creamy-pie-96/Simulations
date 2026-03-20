@@ -177,6 +177,30 @@ src/Boids.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/Boids.cpp.s
 .PHONY : src/Boids.cpp.s
 
+src/Camera.o: src/Camera.cpp.o
+.PHONY : src/Camera.o
+
+# target to build an object file
+src/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/Camera.cpp.o
+.PHONY : src/Camera.cpp.o
+
+src/Camera.i: src/Camera.cpp.i
+.PHONY : src/Camera.i
+
+# target to preprocess a source file
+src/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/Camera.cpp.i
+.PHONY : src/Camera.cpp.i
+
+src/Camera.s: src/Camera.cpp.s
+.PHONY : src/Camera.s
+
+# target to generate assembly for a file
+src/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/Camera.cpp.s
+.PHONY : src/Camera.cpp.s
+
 src/GameOfLife.o: src/GameOfLife.cpp.o
 .PHONY : src/GameOfLife.o
 
@@ -224,6 +248,54 @@ src/LangtonsAnt.s: src/LangtonsAnt.cpp.s
 src/LangtonsAnt.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.s
 .PHONY : src/LangtonsAnt.cpp.s
+
+src/LevelManager.o: src/LevelManager.cpp.o
+.PHONY : src/LevelManager.o
+
+# target to build an object file
+src/LevelManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/LevelManager.cpp.o
+.PHONY : src/LevelManager.cpp.o
+
+src/LevelManager.i: src/LevelManager.cpp.i
+.PHONY : src/LevelManager.i
+
+# target to preprocess a source file
+src/LevelManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/LevelManager.cpp.i
+.PHONY : src/LevelManager.cpp.i
+
+src/LevelManager.s: src/LevelManager.cpp.s
+.PHONY : src/LevelManager.s
+
+# target to generate assembly for a file
+src/LevelManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/LevelManager.cpp.s
+.PHONY : src/LevelManager.cpp.s
+
+src/MazeArt.o: src/MazeArt.cpp.o
+.PHONY : src/MazeArt.o
+
+# target to build an object file
+src/MazeArt.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/MazeArt.cpp.o
+.PHONY : src/MazeArt.cpp.o
+
+src/MazeArt.i: src/MazeArt.cpp.i
+.PHONY : src/MazeArt.i
+
+# target to preprocess a source file
+src/MazeArt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/MazeArt.cpp.i
+.PHONY : src/MazeArt.cpp.i
+
+src/MazeArt.s: src/MazeArt.cpp.s
+.PHONY : src/MazeArt.s
+
+# target to generate assembly for a file
+src/MazeArt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/MazeArt.cpp.s
+.PHONY : src/MazeArt.cpp.s
 
 src/Particle.o: src/Particle.cpp.o
 .PHONY : src/Particle.o
@@ -321,6 +393,126 @@ src/UniverseSim.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/UniverseSim.cpp.s
 .PHONY : src/UniverseSim.cpp.s
 
+src/levels/BlackHoleLevel.o: src/levels/BlackHoleLevel.cpp.o
+.PHONY : src/levels/BlackHoleLevel.o
+
+# target to build an object file
+src/levels/BlackHoleLevel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.o
+.PHONY : src/levels/BlackHoleLevel.cpp.o
+
+src/levels/BlackHoleLevel.i: src/levels/BlackHoleLevel.cpp.i
+.PHONY : src/levels/BlackHoleLevel.i
+
+# target to preprocess a source file
+src/levels/BlackHoleLevel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.i
+.PHONY : src/levels/BlackHoleLevel.cpp.i
+
+src/levels/BlackHoleLevel.s: src/levels/BlackHoleLevel.cpp.s
+.PHONY : src/levels/BlackHoleLevel.s
+
+# target to generate assembly for a file
+src/levels/BlackHoleLevel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.s
+.PHONY : src/levels/BlackHoleLevel.cpp.s
+
+src/levels/GalaxyLevel.o: src/levels/GalaxyLevel.cpp.o
+.PHONY : src/levels/GalaxyLevel.o
+
+# target to build an object file
+src/levels/GalaxyLevel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.o
+.PHONY : src/levels/GalaxyLevel.cpp.o
+
+src/levels/GalaxyLevel.i: src/levels/GalaxyLevel.cpp.i
+.PHONY : src/levels/GalaxyLevel.i
+
+# target to preprocess a source file
+src/levels/GalaxyLevel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.i
+.PHONY : src/levels/GalaxyLevel.cpp.i
+
+src/levels/GalaxyLevel.s: src/levels/GalaxyLevel.cpp.s
+.PHONY : src/levels/GalaxyLevel.s
+
+# target to generate assembly for a file
+src/levels/GalaxyLevel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.s
+.PHONY : src/levels/GalaxyLevel.cpp.s
+
+src/levels/GalaxyMapLevel.o: src/levels/GalaxyMapLevel.cpp.o
+.PHONY : src/levels/GalaxyMapLevel.o
+
+# target to build an object file
+src/levels/GalaxyMapLevel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.o
+.PHONY : src/levels/GalaxyMapLevel.cpp.o
+
+src/levels/GalaxyMapLevel.i: src/levels/GalaxyMapLevel.cpp.i
+.PHONY : src/levels/GalaxyMapLevel.i
+
+# target to preprocess a source file
+src/levels/GalaxyMapLevel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.i
+.PHONY : src/levels/GalaxyMapLevel.cpp.i
+
+src/levels/GalaxyMapLevel.s: src/levels/GalaxyMapLevel.cpp.s
+.PHONY : src/levels/GalaxyMapLevel.s
+
+# target to generate assembly for a file
+src/levels/GalaxyMapLevel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.s
+.PHONY : src/levels/GalaxyMapLevel.cpp.s
+
+src/levels/PlanetLevel.o: src/levels/PlanetLevel.cpp.o
+.PHONY : src/levels/PlanetLevel.o
+
+# target to build an object file
+src/levels/PlanetLevel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.o
+.PHONY : src/levels/PlanetLevel.cpp.o
+
+src/levels/PlanetLevel.i: src/levels/PlanetLevel.cpp.i
+.PHONY : src/levels/PlanetLevel.i
+
+# target to preprocess a source file
+src/levels/PlanetLevel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.i
+.PHONY : src/levels/PlanetLevel.cpp.i
+
+src/levels/PlanetLevel.s: src/levels/PlanetLevel.cpp.s
+.PHONY : src/levels/PlanetLevel.s
+
+# target to generate assembly for a file
+src/levels/PlanetLevel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.s
+.PHONY : src/levels/PlanetLevel.cpp.s
+
+src/levels/SolarSystemLevel.o: src/levels/SolarSystemLevel.cpp.o
+.PHONY : src/levels/SolarSystemLevel.o
+
+# target to build an object file
+src/levels/SolarSystemLevel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.o
+.PHONY : src/levels/SolarSystemLevel.cpp.o
+
+src/levels/SolarSystemLevel.i: src/levels/SolarSystemLevel.cpp.i
+.PHONY : src/levels/SolarSystemLevel.i
+
+# target to preprocess a source file
+src/levels/SolarSystemLevel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.i
+.PHONY : src/levels/SolarSystemLevel.cpp.i
+
+src/levels/SolarSystemLevel.s: src/levels/SolarSystemLevel.cpp.s
+.PHONY : src/levels/SolarSystemLevel.s
+
+# target to generate assembly for a file
+src/levels/SolarSystemLevel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/particle_life.dir/build.make CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.s
+.PHONY : src/levels/SolarSystemLevel.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -360,12 +552,21 @@ help:
 	@echo "... src/Boids.o"
 	@echo "... src/Boids.i"
 	@echo "... src/Boids.s"
+	@echo "... src/Camera.o"
+	@echo "... src/Camera.i"
+	@echo "... src/Camera.s"
 	@echo "... src/GameOfLife.o"
 	@echo "... src/GameOfLife.i"
 	@echo "... src/GameOfLife.s"
 	@echo "... src/LangtonsAnt.o"
 	@echo "... src/LangtonsAnt.i"
 	@echo "... src/LangtonsAnt.s"
+	@echo "... src/LevelManager.o"
+	@echo "... src/LevelManager.i"
+	@echo "... src/LevelManager.s"
+	@echo "... src/MazeArt.o"
+	@echo "... src/MazeArt.i"
+	@echo "... src/MazeArt.s"
 	@echo "... src/Particle.o"
 	@echo "... src/Particle.i"
 	@echo "... src/Particle.s"
@@ -378,6 +579,21 @@ help:
 	@echo "... src/UniverseSim.o"
 	@echo "... src/UniverseSim.i"
 	@echo "... src/UniverseSim.s"
+	@echo "... src/levels/BlackHoleLevel.o"
+	@echo "... src/levels/BlackHoleLevel.i"
+	@echo "... src/levels/BlackHoleLevel.s"
+	@echo "... src/levels/GalaxyLevel.o"
+	@echo "... src/levels/GalaxyLevel.i"
+	@echo "... src/levels/GalaxyLevel.s"
+	@echo "... src/levels/GalaxyMapLevel.o"
+	@echo "... src/levels/GalaxyMapLevel.i"
+	@echo "... src/levels/GalaxyMapLevel.s"
+	@echo "... src/levels/PlanetLevel.o"
+	@echo "... src/levels/PlanetLevel.i"
+	@echo "... src/levels/PlanetLevel.s"
+	@echo "... src/levels/SolarSystemLevel.o"
+	@echo "... src/levels/SolarSystemLevel.i"
+	@echo "... src/levels/SolarSystemLevel.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

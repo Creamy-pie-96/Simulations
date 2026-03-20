@@ -56,8 +56,8 @@ Boids::Boids(int width, int height, int count)
     : width(width), height(height), flockCount(5), maxFlocks(16),
       mouseX(0), mouseY(0), mouseMode(0),
       separationRadius(25.0f), alignRadius(50.0f), cohesionRadius(50.0f),
-      sepWeight(1.5f), alignWeight(1.0f), cohWeight(1.0f),
-      maxSpeed(3.0f), maxForce(0.05f)
+      sepWeight(2.4f), alignWeight(0.9f), cohWeight(0.45f),
+      maxSpeed(3.0f), maxForce(0.08f)
 {
     boids.resize(std::max(0, count));
     rebuildColors();
@@ -144,19 +144,20 @@ void Boids::update(float dt)
 
             if (d < separationRadius)
             {
-                sepX -= dx / d;
-                sepY -= dy / d;
+                float inv = 1.0f / std::max(1.0f, d2);
+                sepX -= dx * inv * 60.0f;
+                sepY -= dy * inv * 60.0f;
                 sepCount++;
             }
 
-            if (d < alignRadius)
+            if (d < alignRadius && other.type == me.type)
             {
                 aliX += other.vx;
                 aliY += other.vy;
                 aliCount++;
             }
 
-            if (d < cohesionRadius)
+            if (d < cohesionRadius && other.type == me.type)
             {
                 cohX += dx;
                 cohY += dy;

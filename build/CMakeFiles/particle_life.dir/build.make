@@ -83,10 +83,52 @@ CMakeFiles/particle_life.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/particle_life.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/DATA/CODE/code/particle_life/src/main.cpp -o CMakeFiles/particle_life.dir/src/main.cpp.s
 
+CMakeFiles/particle_life.dir/src/Camera.cpp.o: CMakeFiles/particle_life.dir/flags.make
+CMakeFiles/particle_life.dir/src/Camera.cpp.o: /home/DATA/CODE/code/particle_life/src/Camera.cpp
+CMakeFiles/particle_life.dir/src/Camera.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/particle_life.dir/src/Camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/Camera.cpp.o -MF CMakeFiles/particle_life.dir/src/Camera.cpp.o.d -o CMakeFiles/particle_life.dir/src/Camera.cpp.o -c /home/DATA/CODE/code/particle_life/src/Camera.cpp
+
+CMakeFiles/particle_life.dir/src/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/particle_life.dir/src/Camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/DATA/CODE/code/particle_life/src/Camera.cpp > CMakeFiles/particle_life.dir/src/Camera.cpp.i
+
+CMakeFiles/particle_life.dir/src/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/particle_life.dir/src/Camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/DATA/CODE/code/particle_life/src/Camera.cpp -o CMakeFiles/particle_life.dir/src/Camera.cpp.s
+
+CMakeFiles/particle_life.dir/src/LevelManager.cpp.o: CMakeFiles/particle_life.dir/flags.make
+CMakeFiles/particle_life.dir/src/LevelManager.cpp.o: /home/DATA/CODE/code/particle_life/src/LevelManager.cpp
+CMakeFiles/particle_life.dir/src/LevelManager.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/particle_life.dir/src/LevelManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/LevelManager.cpp.o -MF CMakeFiles/particle_life.dir/src/LevelManager.cpp.o.d -o CMakeFiles/particle_life.dir/src/LevelManager.cpp.o -c /home/DATA/CODE/code/particle_life/src/LevelManager.cpp
+
+CMakeFiles/particle_life.dir/src/LevelManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/particle_life.dir/src/LevelManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/DATA/CODE/code/particle_life/src/LevelManager.cpp > CMakeFiles/particle_life.dir/src/LevelManager.cpp.i
+
+CMakeFiles/particle_life.dir/src/LevelManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/particle_life.dir/src/LevelManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/DATA/CODE/code/particle_life/src/LevelManager.cpp -o CMakeFiles/particle_life.dir/src/LevelManager.cpp.s
+
+CMakeFiles/particle_life.dir/src/MazeArt.cpp.o: CMakeFiles/particle_life.dir/flags.make
+CMakeFiles/particle_life.dir/src/MazeArt.cpp.o: /home/DATA/CODE/code/particle_life/src/MazeArt.cpp
+CMakeFiles/particle_life.dir/src/MazeArt.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/particle_life.dir/src/MazeArt.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/MazeArt.cpp.o -MF CMakeFiles/particle_life.dir/src/MazeArt.cpp.o.d -o CMakeFiles/particle_life.dir/src/MazeArt.cpp.o -c /home/DATA/CODE/code/particle_life/src/MazeArt.cpp
+
+CMakeFiles/particle_life.dir/src/MazeArt.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/particle_life.dir/src/MazeArt.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/DATA/CODE/code/particle_life/src/MazeArt.cpp > CMakeFiles/particle_life.dir/src/MazeArt.cpp.i
+
+CMakeFiles/particle_life.dir/src/MazeArt.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/particle_life.dir/src/MazeArt.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/DATA/CODE/code/particle_life/src/MazeArt.cpp -o CMakeFiles/particle_life.dir/src/MazeArt.cpp.s
+
 CMakeFiles/particle_life.dir/src/Particle.cpp.o: CMakeFiles/particle_life.dir/flags.make
 CMakeFiles/particle_life.dir/src/Particle.cpp.o: /home/DATA/CODE/code/particle_life/src/Particle.cpp
 CMakeFiles/particle_life.dir/src/Particle.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/particle_life.dir/src/Particle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/particle_life.dir/src/Particle.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/Particle.cpp.o -MF CMakeFiles/particle_life.dir/src/Particle.cpp.o.d -o CMakeFiles/particle_life.dir/src/Particle.cpp.o -c /home/DATA/CODE/code/particle_life/src/Particle.cpp
 
 CMakeFiles/particle_life.dir/src/Particle.cpp.i: cmake_force
@@ -100,7 +142,7 @@ CMakeFiles/particle_life.dir/src/Particle.cpp.s: cmake_force
 CMakeFiles/particle_life.dir/src/AtomModel.cpp.o: CMakeFiles/particle_life.dir/flags.make
 CMakeFiles/particle_life.dir/src/AtomModel.cpp.o: /home/DATA/CODE/code/particle_life/src/AtomModel.cpp
 CMakeFiles/particle_life.dir/src/AtomModel.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/particle_life.dir/src/AtomModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/particle_life.dir/src/AtomModel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/AtomModel.cpp.o -MF CMakeFiles/particle_life.dir/src/AtomModel.cpp.o.d -o CMakeFiles/particle_life.dir/src/AtomModel.cpp.o -c /home/DATA/CODE/code/particle_life/src/AtomModel.cpp
 
 CMakeFiles/particle_life.dir/src/AtomModel.cpp.i: cmake_force
@@ -114,7 +156,7 @@ CMakeFiles/particle_life.dir/src/AtomModel.cpp.s: cmake_force
 CMakeFiles/particle_life.dir/src/GameOfLife.cpp.o: CMakeFiles/particle_life.dir/flags.make
 CMakeFiles/particle_life.dir/src/GameOfLife.cpp.o: /home/DATA/CODE/code/particle_life/src/GameOfLife.cpp
 CMakeFiles/particle_life.dir/src/GameOfLife.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/particle_life.dir/src/GameOfLife.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/particle_life.dir/src/GameOfLife.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/GameOfLife.cpp.o -MF CMakeFiles/particle_life.dir/src/GameOfLife.cpp.o.d -o CMakeFiles/particle_life.dir/src/GameOfLife.cpp.o -c /home/DATA/CODE/code/particle_life/src/GameOfLife.cpp
 
 CMakeFiles/particle_life.dir/src/GameOfLife.cpp.i: cmake_force
@@ -128,7 +170,7 @@ CMakeFiles/particle_life.dir/src/GameOfLife.cpp.s: cmake_force
 CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.o: CMakeFiles/particle_life.dir/flags.make
 CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.o: /home/DATA/CODE/code/particle_life/src/LangtonsAnt.cpp
 CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.o -MF CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.o.d -o CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.o -c /home/DATA/CODE/code/particle_life/src/LangtonsAnt.cpp
 
 CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.i: cmake_force
@@ -142,7 +184,7 @@ CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.s: cmake_force
 CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.o: CMakeFiles/particle_life.dir/flags.make
 CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.o: /home/DATA/CODE/code/particle_life/src/ReactionDiffusion.cpp
 CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.o -MF CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.o.d -o CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.o -c /home/DATA/CODE/code/particle_life/src/ReactionDiffusion.cpp
 
 CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.i: cmake_force
@@ -156,7 +198,7 @@ CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.s: cmake_force
 CMakeFiles/particle_life.dir/src/Boids.cpp.o: CMakeFiles/particle_life.dir/flags.make
 CMakeFiles/particle_life.dir/src/Boids.cpp.o: /home/DATA/CODE/code/particle_life/src/Boids.cpp
 CMakeFiles/particle_life.dir/src/Boids.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/particle_life.dir/src/Boids.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/particle_life.dir/src/Boids.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/Boids.cpp.o -MF CMakeFiles/particle_life.dir/src/Boids.cpp.o.d -o CMakeFiles/particle_life.dir/src/Boids.cpp.o -c /home/DATA/CODE/code/particle_life/src/Boids.cpp
 
 CMakeFiles/particle_life.dir/src/Boids.cpp.i: cmake_force
@@ -167,10 +209,80 @@ CMakeFiles/particle_life.dir/src/Boids.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/particle_life.dir/src/Boids.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/DATA/CODE/code/particle_life/src/Boids.cpp -o CMakeFiles/particle_life.dir/src/Boids.cpp.s
 
+CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.o: CMakeFiles/particle_life.dir/flags.make
+CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.o: /home/DATA/CODE/code/particle_life/src/levels/GalaxyMapLevel.cpp
+CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.o -MF CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.o.d -o CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.o -c /home/DATA/CODE/code/particle_life/src/levels/GalaxyMapLevel.cpp
+
+CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/DATA/CODE/code/particle_life/src/levels/GalaxyMapLevel.cpp > CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.i
+
+CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/DATA/CODE/code/particle_life/src/levels/GalaxyMapLevel.cpp -o CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.s
+
+CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.o: CMakeFiles/particle_life.dir/flags.make
+CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.o: /home/DATA/CODE/code/particle_life/src/levels/GalaxyLevel.cpp
+CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.o -MF CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.o.d -o CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.o -c /home/DATA/CODE/code/particle_life/src/levels/GalaxyLevel.cpp
+
+CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/DATA/CODE/code/particle_life/src/levels/GalaxyLevel.cpp > CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.i
+
+CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/DATA/CODE/code/particle_life/src/levels/GalaxyLevel.cpp -o CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.s
+
+CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.o: CMakeFiles/particle_life.dir/flags.make
+CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.o: /home/DATA/CODE/code/particle_life/src/levels/SolarSystemLevel.cpp
+CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.o -MF CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.o.d -o CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.o -c /home/DATA/CODE/code/particle_life/src/levels/SolarSystemLevel.cpp
+
+CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/DATA/CODE/code/particle_life/src/levels/SolarSystemLevel.cpp > CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.i
+
+CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/DATA/CODE/code/particle_life/src/levels/SolarSystemLevel.cpp -o CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.s
+
+CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.o: CMakeFiles/particle_life.dir/flags.make
+CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.o: /home/DATA/CODE/code/particle_life/src/levels/PlanetLevel.cpp
+CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.o -MF CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.o.d -o CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.o -c /home/DATA/CODE/code/particle_life/src/levels/PlanetLevel.cpp
+
+CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/DATA/CODE/code/particle_life/src/levels/PlanetLevel.cpp > CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.i
+
+CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/DATA/CODE/code/particle_life/src/levels/PlanetLevel.cpp -o CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.s
+
+CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.o: CMakeFiles/particle_life.dir/flags.make
+CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.o: /home/DATA/CODE/code/particle_life/src/levels/BlackHoleLevel.cpp
+CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.o -MF CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.o.d -o CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.o -c /home/DATA/CODE/code/particle_life/src/levels/BlackHoleLevel.cpp
+
+CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/DATA/CODE/code/particle_life/src/levels/BlackHoleLevel.cpp > CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.i
+
+CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/DATA/CODE/code/particle_life/src/levels/BlackHoleLevel.cpp -o CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.s
+
 CMakeFiles/particle_life.dir/src/UniverseSim.cpp.o: CMakeFiles/particle_life.dir/flags.make
 CMakeFiles/particle_life.dir/src/UniverseSim.cpp.o: /home/DATA/CODE/code/particle_life/src/UniverseSim.cpp
 CMakeFiles/particle_life.dir/src/UniverseSim.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/particle_life.dir/src/UniverseSim.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/particle_life.dir/src/UniverseSim.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/UniverseSim.cpp.o -MF CMakeFiles/particle_life.dir/src/UniverseSim.cpp.o.d -o CMakeFiles/particle_life.dir/src/UniverseSim.cpp.o -c /home/DATA/CODE/code/particle_life/src/UniverseSim.cpp
 
 CMakeFiles/particle_life.dir/src/UniverseSim.cpp.i: cmake_force
@@ -184,7 +296,7 @@ CMakeFiles/particle_life.dir/src/UniverseSim.cpp.s: cmake_force
 CMakeFiles/particle_life.dir/src/Simulation.cpp.o: CMakeFiles/particle_life.dir/flags.make
 CMakeFiles/particle_life.dir/src/Simulation.cpp.o: /home/DATA/CODE/code/particle_life/src/Simulation.cpp
 CMakeFiles/particle_life.dir/src/Simulation.cpp.o: CMakeFiles/particle_life.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/particle_life.dir/src/Simulation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/particle_life.dir/src/Simulation.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/particle_life.dir/src/Simulation.cpp.o -MF CMakeFiles/particle_life.dir/src/Simulation.cpp.o.d -o CMakeFiles/particle_life.dir/src/Simulation.cpp.o -c /home/DATA/CODE/code/particle_life/src/Simulation.cpp
 
 CMakeFiles/particle_life.dir/src/Simulation.cpp.i: cmake_force
@@ -198,12 +310,20 @@ CMakeFiles/particle_life.dir/src/Simulation.cpp.s: cmake_force
 # Object files for target particle_life
 particle_life_OBJECTS = \
 "CMakeFiles/particle_life.dir/src/main.cpp.o" \
+"CMakeFiles/particle_life.dir/src/Camera.cpp.o" \
+"CMakeFiles/particle_life.dir/src/LevelManager.cpp.o" \
+"CMakeFiles/particle_life.dir/src/MazeArt.cpp.o" \
 "CMakeFiles/particle_life.dir/src/Particle.cpp.o" \
 "CMakeFiles/particle_life.dir/src/AtomModel.cpp.o" \
 "CMakeFiles/particle_life.dir/src/GameOfLife.cpp.o" \
 "CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.o" \
 "CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.o" \
 "CMakeFiles/particle_life.dir/src/Boids.cpp.o" \
+"CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.o" \
+"CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.o" \
+"CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.o" \
+"CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.o" \
+"CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.o" \
 "CMakeFiles/particle_life.dir/src/UniverseSim.cpp.o" \
 "CMakeFiles/particle_life.dir/src/Simulation.cpp.o"
 
@@ -211,19 +331,28 @@ particle_life_OBJECTS = \
 particle_life_EXTERNAL_OBJECTS =
 
 particle_life: CMakeFiles/particle_life.dir/src/main.cpp.o
+particle_life: CMakeFiles/particle_life.dir/src/Camera.cpp.o
+particle_life: CMakeFiles/particle_life.dir/src/LevelManager.cpp.o
+particle_life: CMakeFiles/particle_life.dir/src/MazeArt.cpp.o
 particle_life: CMakeFiles/particle_life.dir/src/Particle.cpp.o
 particle_life: CMakeFiles/particle_life.dir/src/AtomModel.cpp.o
 particle_life: CMakeFiles/particle_life.dir/src/GameOfLife.cpp.o
 particle_life: CMakeFiles/particle_life.dir/src/LangtonsAnt.cpp.o
 particle_life: CMakeFiles/particle_life.dir/src/ReactionDiffusion.cpp.o
 particle_life: CMakeFiles/particle_life.dir/src/Boids.cpp.o
+particle_life: CMakeFiles/particle_life.dir/src/levels/GalaxyMapLevel.cpp.o
+particle_life: CMakeFiles/particle_life.dir/src/levels/GalaxyLevel.cpp.o
+particle_life: CMakeFiles/particle_life.dir/src/levels/SolarSystemLevel.cpp.o
+particle_life: CMakeFiles/particle_life.dir/src/levels/PlanetLevel.cpp.o
+particle_life: CMakeFiles/particle_life.dir/src/levels/BlackHoleLevel.cpp.o
 particle_life: CMakeFiles/particle_life.dir/src/UniverseSim.cpp.o
 particle_life: CMakeFiles/particle_life.dir/src/Simulation.cpp.o
 particle_life: CMakeFiles/particle_life.dir/build.make
 particle_life: /usr/lib/x86_64-linux-gnu/libSDL2.so
 particle_life: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
+particle_life: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
 particle_life: CMakeFiles/particle_life.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable particle_life"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/DATA/CODE/code/particle_life/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable particle_life"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/particle_life.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

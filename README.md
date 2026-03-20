@@ -1,20 +1,21 @@
 # Particle Life + Physics Sandbox (SDL2)
 
-Multi-mode interactive simulation app using C++17 + SDL2 + SDL2_ttf.
+Multi-mode interactive simulation app using C++17 + SDL2, SDL2_ttf, and SDL2_image.
 
-It includes emergent systems, cellular automata, flocking, atom visualization, and a Newtonian universe sandbox.
+It includes emergent systems, cellular automata, flocking, atom visualization, Newtonian gravity sandboxes, a hierarchical zoom universe, and image-guided maze art.
 
 ## Requirements
 
 - C++17 compiler
 - SDL2
 - SDL2_ttf
+- SDL2_image
 - CMake
 
 Ubuntu / Debian:
 
 ```bash
-sudo apt install build-essential cmake libsdl2-dev libsdl2-ttf-dev
+sudo apt install build-essential cmake libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev
 ```
 
 ## Build
@@ -40,6 +41,8 @@ cd build
 5. Boids
 6. Atom Model
 7. Universe Sim
+8. Hierarchy Sim
+9. Maze Art
 
 ## Global controls
 
@@ -159,6 +162,50 @@ Controls:
 - **R**: reseed galaxy
 - **C**: clear
 
+### 8) Hierarchy Sim
+
+- Stack-based zoom levels:
+  - Galaxy Map → Galaxy → Solar System → Planet / Black Hole
+- Camera pan/zoom/focus workflow
+- Per-level spawn and gravity interactions
+- Per-level population and time scaling
+
+Controls:
+
+- **F** or **1**: focus mode
+- **G** or **2**: gravity mode
+- **S** or **3**: spawn mode
+- **B**: zoom out one level
+- **Z**: zoom into body at cursor
+- **LMB / RMB** in current click mode
+- **MMB drag**: pan
+- **Mouse wheel**: zoom
+- **= / -**: increase/decrease population
+- **UP / DOWN**: increase/decrease time scale
+- **R** or **C**: reset hierarchy root
+
+### 9) Maze Art
+
+- DFS recursive-backtracker maze generator
+- Optional image-weighted traversal (darker pixels visited sooner)
+- Corridor rendering is line-based (drawn paths), not tile-reveal
+- Color mode from image or random palette
+- Monochrome mode for pure brightness-based drawing
+- Active carving head is green; idle marker is white
+
+Controls:
+
+- **UP / DOWN**: speed (supports fractional rates down to 0.1 steps/frame)
+- **R**: regenerate maze
+- **I**: browse/load image (`png`, `jpg`, `jpeg`, `bmp`)
+- **U**: unload image weights (random perfect maze behavior)
+- **K**: toggle monochrome
+
+Notes:
+
+- File picker uses one of: `zenity`, `kdialog`, `yad`, `qarma`.
+- If no picker is available, image browsing will be canceled gracefully.
+
 ## Preset path (Particle Life)
 
 Rule preset uses a stable writable SDL path:
@@ -171,6 +218,7 @@ The absolute path is printed to terminal at startup and on save/load.
 
 - Reaction Diffusion uses `cellSize = 3` by default for good performance.
 - Universe Sim is $O(N^2)$ in body count, so very large body counts will reduce FPS.
+- Hierarchy levels and Maze Art speed settings can also significantly affect frame time.
 
 ## Font note
 

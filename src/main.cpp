@@ -1,15 +1,21 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
 #include "AtomModel.hpp"
 #include "Boids.hpp"
 #include "GameOfLife.hpp"
 #include "LangtonsAnt.hpp"
+#include "LevelManager.hpp"
+#include "MazeArt.hpp"
 #include "ReactionDiffusion.hpp"
 #include "Simulation.hpp"
 #include "UniverseSim.hpp"
+#include "levels/GalaxyMapLevel.hpp"
 #include <cstdlib>
 #include <ctime>
+#include <cstdio>
 #include <iostream>
+#include <memory>
 #include <string>
 
 static SDL_Window *simWin = nullptr;
@@ -24,6 +30,8 @@ enum class AppMode
     Boids,
     AtomModel,
     UniverseSim,
+    HierarchySim,
+    MazeArt,
     Count
 };
 
@@ -52,9 +60,51 @@ static const char *modeName(AppMode mode)
         return "ATOM MODEL";
     case AppMode::UniverseSim:
         return "UNIVERSE SIM";
+    case AppMode::HierarchySim:
+        return "HIERARCHY SIM";
+    case AppMode::MazeArt:
+        return "MAZE ART";
     default:
         return "UNKNOWN";
     }
+}
+
+static std::string trimString(const std::string &s)
+{
+    size_t b = 0;
+    size_t e = s.size();
+    while (b < e && (s[b] == ' ' || s[b] == '\n' || s[b] == '\r' || s[b] == '\t'))
+        b++;
+    while (e > b && (s[e - 1] == ' ' || s[e - 1] == '\n' || s[e - 1] == '\r' || s[e - 1] == '\t'))
+        e--;
+    return s.substr(b, e - b);
+}
+
+static std::string browseImageFilePath()
+{
+    const char *commands[] = {
+        "zenity --file-selection --title=\"Choose image\" --file-filter=\"Images | *.png *.jpg *.jpeg *.bmp\" 2>/dev/null",
+        "kdialog --getopenfilename \"$HOME\" \"Images (*.png *.jpg *.jpeg *.bmp)\" 2>/dev/null",
+        "yad --file --title=\"Choose image\" --file-filter=\"Images (*.png *.jpg *.jpeg *.bmp)\" 2>/dev/null",
+        "qarma --file-selection --title=\"Choose image\" --file-filter=\"Images | *.png *.jpg *.jpeg *.bmp\" 2>/dev/null"};
+
+    for (const char *cmd : commands)
+    {
+        FILE *pipe = popen(cmd, "r");
+        if (!pipe)
+            continue;
+
+        char buffer[4096];
+        std::string out;
+        while (fgets(buffer, sizeof(buffer), pipe))
+            out += buffer;
+        int rc = pclose(pipe);
+
+        out = trimString(out);
+        if (rc == 0 && !out.empty())
+            return out;
+    }
+    return "";
 }
 
 // ── draw helpers ────────────────────────────────────────────────
@@ -114,6 +164,8 @@ static void drawPanel(SDL_Renderer *r, TTF_Font *font,
                       const Boids &boids,
                       const AtomModel &atom,
                       const UniverseSim &universe,
+                      const LevelManager &hier,
+                      const MazeArt &maze,
                       const PanelState &state)
 {
     const int PW = 280;
@@ -353,6 +405,65 @@ static void drawPanel(SDL_Renderer *r, TTF_Font *font,
         drawText(r, small, "R new galaxy / C clear", PAD, y, 70, 70, 95);
         y += 16;
     }
+    else if (state.mode == AppMode::HierarchySim)
+    {
+        drawText(r, small, "Level: " + hier.getTitle(), PAD, y, 170, 220, 255);
+        y += 18;
+        drawText(r, small, "Depth: " + std::to_string(hier.getDepth()), PAD, y, 170, 220, 255);
+        y += 18;
+        if (hier.current())
+        {
+            drawText(r, small, "Bodies: " + std::to_string(hier.current()->getBodyCount()), PAD, y, 170, 220, 255);
+            y += 18;
+        }
+        drawText(r, small, "Click mode: " + hier.getClickModeName(), PAD, y, 170, 220, 255);
+        y += 18;
+        drawText(r, small, "Time scale: " + std::to_string(hier.getTimeScale()).substr(0, 4), PAD, y, 170, 220, 255);
+        y += 18;
+
+        drawRect(r, PAD, y, BW, 1, 40, 40, 55);
+        y += 12;
+        drawText(r, small, "F/1 Focus, G/2 Gravity", PAD, y, 70, 70, 95);
+        y += 16;
+        drawText(r, small, "S/3 Spawn, B zoom out", PAD, y, 70, 70, 95);
+        y += 16;
+        drawText(r, small, "UP/DOWN time, =/- objects", PAD, y, 70, 70, 95);
+        y += 16;
+        drawText(r, small, "Focus: LMB or Z on target", PAD, y, 70, 70, 95);
+        y += 16;
+        drawText(r, small, "Gravity: hold LMB/RMB", PAD, y, 70, 70, 95);
+        y += 16;
+        drawText(r, small, "Spawn: LMB star, RMB BH", PAD, y, 70, 70, 95);
+        y += 16;
+        drawText(r, small, "Wheel zoom, MMB drag pan", PAD, y, 70, 70, 95);
+        y += 16;
+    }
+    else if (state.mode == AppMode::MazeArt)
+    {
+        drawText(r, small, "Visited: " + std::to_string(maze.getVisitedCount()) + "/" + std::to_string(maze.getTotalCells()), PAD, y, 190, 220, 255);
+        y += 18;
+        drawText(r, small, "Grid: " + std::to_string(maze.getCols()) + "x" + std::to_string(maze.getRows()), PAD, y, 190, 220, 255);
+        y += 18;
+        drawText(r, small, "Speed: " + std::to_string(maze.getSpeed()).substr(0, 4) + " steps/frame", PAD, y, 190, 220, 255);
+        y += 18;
+        drawText(r, small, std::string("Image: ") + (maze.hasImage() ? "loaded" : "none"), PAD, y, 190, 220, 255);
+        y += 18;
+        drawText(r, small, std::string("Monochrome: ") + (maze.getMonochrome() ? "ON" : "OFF"), PAD, y, 190, 220, 255);
+        y += 18;
+
+        drawRect(r, PAD, y, BW, 1, 40, 40, 55);
+        y += 12;
+        drawText(r, small, "UP/DOWN speed", PAD, y, 70, 70, 95);
+        y += 16;
+        drawText(r, small, "R regenerate", PAD, y, 70, 70, 95);
+        y += 16;
+        drawText(r, small, "I browse/load (png/jpg/jpeg/bmp)", PAD, y, 70, 70, 95);
+        y += 16;
+        drawText(r, small, "U unload image (perfect maze)", PAD, y, 70, 70, 95);
+        y += 16;
+        drawText(r, small, "K toggle monochrome", PAD, y, 70, 70, 95);
+        y += 16;
+    }
 
     drawRect(r, PAD, y, BW, 1, 40, 40, 55);
     y += 12;
@@ -373,6 +484,7 @@ int main()
     const int PAN_W = 280, PAN_H = 620;
 
     SDL_Init(SDL_INIT_VIDEO);
+    IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
     TTF_Init();
 
     // load a system monospace font
@@ -413,6 +525,9 @@ int main()
     Boids boids(SIM_W, SIM_H, 220);
     AtomModel atom(SIM_W, SIM_H);
     UniverseSim universe(SIM_W, SIM_H);
+    LevelManager hierarchy(SIM_W, SIM_H);
+    MazeArt maze(SIM_W, SIM_H, 8);
+    hierarchy.setRoot(std::make_unique<GalaxyMapLevel>());
     gol.randomize(0.17f);
 
     AppMode mode = AppMode::ParticleLife;
@@ -470,6 +585,8 @@ int main()
                 boids.clearMouseInteraction();
                 atom.clearMouseInteraction();
                 universe.clearMouseInteraction();
+                if (mode == AppMode::HierarchySim)
+                    hierarchy.handleMouseUp(event.button.button);
             }
 
             if (event.type == SDL_MOUSEMOTION && event.motion.windowID == simID)
@@ -522,6 +639,22 @@ int main()
                         universe.setMouseInteraction(event.motion.x, event.motion.y, 1);
                     else if (event.motion.state & SDL_BUTTON_RMASK)
                         universe.setMouseInteraction(event.motion.x, event.motion.y, -1);
+                }
+                else if (mode == AppMode::HierarchySim)
+                {
+                    hierarchy.handleMouseMotion(event.motion.state, event.motion.x, event.motion.y);
+                }
+            }
+
+            if (event.type == SDL_MOUSEWHEEL)
+            {
+                int mx = 0, my = 0;
+                Uint32 win = SDL_GetMouseState(&mx, &my);
+                (void)win;
+                if (mode == AppMode::HierarchySim)
+                {
+                    hierarchy.handleMouseWheel(event.wheel.y);
+                    status = hierarchy.getStatus();
                 }
             }
 
@@ -594,6 +727,11 @@ int main()
                         status = "nearest body removed";
                     }
                 }
+                else if (mode == AppMode::HierarchySim)
+                {
+                    hierarchy.handleMouseDown(event.button.button, event.button.x, event.button.y);
+                    status = hierarchy.getStatus();
+                }
             }
 
             if (event.type == SDL_KEYDOWN)
@@ -613,6 +751,12 @@ int main()
                     break;
                 default:
                     break;
+                }
+
+                if (mode == AppMode::HierarchySim)
+                {
+                    hierarchy.handleKey(event.key.keysym.sym);
+                    status = hierarchy.getStatus();
                 }
 
                 if (event.key.keysym.sym == SDLK_r)
@@ -652,6 +796,16 @@ int main()
                         universe.randomize();
                         status = "new galaxy seeded";
                     }
+                    else if (mode == AppMode::HierarchySim)
+                    {
+                        hierarchy.setRoot(std::make_unique<GalaxyMapLevel>());
+                        status = "hierarchy reset";
+                    }
+                    else if (mode == AppMode::MazeArt)
+                    {
+                        maze.regenerate(false);
+                        status = "maze regenerated";
+                    }
                 }
 
                 if (event.key.keysym.sym == SDLK_c)
@@ -685,6 +839,16 @@ int main()
                     {
                         universe.clear();
                         status = "universe cleared";
+                    }
+                    else if (mode == AppMode::HierarchySim)
+                    {
+                        hierarchy.setRoot(std::make_unique<GalaxyMapLevel>());
+                        status = "hierarchy reset";
+                    }
+                    else if (mode == AppMode::MazeArt)
+                    {
+                        maze.unloadImage();
+                        status = "maze image unloaded";
                     }
                 }
 
@@ -779,6 +943,49 @@ int main()
                         status = std::string("universe trails ") + (universe.getTrailsEnabled() ? "enabled" : "disabled");
                     }
                 }
+                else if (mode == AppMode::HierarchySim)
+                {
+                    if (event.key.keysym.sym == SDLK_f || event.key.keysym.sym == SDLK_g ||
+                        event.key.keysym.sym == SDLK_s || event.key.keysym.sym == SDLK_1 ||
+                        event.key.keysym.sym == SDLK_2 || event.key.keysym.sym == SDLK_3 ||
+                        event.key.keysym.sym == SDLK_b)
+                    {
+                        status = hierarchy.getStatus();
+                    }
+                    else if (event.key.keysym.sym == SDLK_z)
+                    {
+                        int mx = SIM_W / 2, my = SIM_H / 2;
+                        SDL_GetMouseState(&mx, &my);
+                        hierarchy.zoomIntoAt(mx, my);
+                        status = hierarchy.getStatus();
+                    }
+                }
+                else if (mode == AppMode::MazeArt)
+                {
+                    if (event.key.keysym.sym == SDLK_i)
+                    {
+                        std::string path = browseImageFilePath();
+                        if (path.empty())
+                        {
+                            status = "browse canceled or no file dialog available";
+                        }
+                        else
+                        {
+                            bool ok = maze.loadImage(path);
+                            status = ok ? ("image loaded: " + path) : ("failed load: " + path);
+                        }
+                    }
+                    else if (event.key.keysym.sym == SDLK_u)
+                    {
+                        maze.unloadImage();
+                        status = "image weights removed";
+                    }
+                    else if (event.key.keysym.sym == SDLK_k)
+                    {
+                        maze.toggleMonochrome();
+                        status = std::string("maze monochrome ") + (maze.getMonochrome() ? "ON" : "OFF");
+                    }
+                }
             }
         }
 
@@ -799,6 +1006,10 @@ int main()
                     boids.increaseSpeed();
                 else if (mode == AppMode::UniverseSim)
                     universe.increaseSpeed();
+                else if (mode == AppMode::HierarchySim)
+                    hierarchy.increaseTimeScale();
+                else if (mode == AppMode::MazeArt)
+                    maze.increaseSpeed();
                 any = true;
             }
             if (keys[SDL_SCANCODE_DOWN])
@@ -813,6 +1024,10 @@ int main()
                     boids.decreaseSpeed();
                 else if (mode == AppMode::UniverseSim)
                     universe.decreaseSpeed();
+                else if (mode == AppMode::HierarchySim)
+                    hierarchy.decreaseTimeScale();
+                else if (mode == AppMode::MazeArt)
+                    maze.decreaseSpeed();
                 any = true;
             }
 
@@ -831,9 +1046,21 @@ int main()
                 boids.addFlock();
                 any = true;
             }
+            if (mode == AppMode::HierarchySim && keys[SDL_SCANCODE_EQUALS])
+            {
+                hierarchy.increasePopulation();
+                status = hierarchy.getStatus();
+                any = true;
+            }
             if (mode == AppMode::Boids && keys[SDL_SCANCODE_MINUS])
             {
                 boids.removeFlock();
+                any = true;
+            }
+            if (mode == AppMode::HierarchySim && keys[SDL_SCANCODE_MINUS])
+            {
+                hierarchy.decreasePopulation();
+                status = hierarchy.getStatus();
                 any = true;
             }
             if (any)
@@ -878,14 +1105,26 @@ int main()
             universe.update(dt);
             universe.draw(simRen);
         }
+        else if (mode == AppMode::HierarchySim)
+        {
+            hierarchy.update(dt);
+            hierarchy.draw(simRen);
+            status = hierarchy.getStatus();
+        }
+        else if (mode == AppMode::MazeArt)
+        {
+            maze.update(dt);
+            maze.draw(simRen);
+        }
 
         PanelState panelState = {mode, fps, status};
-        drawPanel(panRen, font, small, sim, gol, ant, rd, boids, atom, universe, panelState);
+        drawPanel(panRen, font, small, sim, gol, ant, rd, boids, atom, universe, hierarchy, maze, panelState);
     }
 
     TTF_CloseFont(font);
     TTF_CloseFont(small);
     TTF_Quit();
+    IMG_Quit();
 
     SDL_DestroyRenderer(panRen);
     SDL_DestroyWindow(panWin);

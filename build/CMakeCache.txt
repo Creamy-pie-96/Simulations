@@ -228,6 +228,12 @@ ParticleLife_SOURCE_DIR:STATIC=/home/DATA/CODE/code/particle_life
 SDL2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SDL2
 
 //Path to a file.
+SDL2_IMAGE_INCLUDE_DIR:PATH=/usr/include/SDL2
+
+//Path to a library.
+SDL2_IMAGE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libSDL2_image.so
+
+//Path to a file.
 SDL2_TTF_INCLUDE_DIR:PATH=/usr/include/SDL2
 
 //Path to a library.
