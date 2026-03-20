@@ -47,7 +47,7 @@ namespace
 }
 
 AtomModel::AtomModel(int width, int height)
-    : width(width), height(height), atomicNumber(1), orbitalMode(0), cloudN(2200), trailsEnabled(true),
+    : width(width), height(height), atomicNumber(1), orbitalMode(0), cloudN(4200), trailsEnabled(true),
       wobbleX(0.0f), wobbleY(0.0f), wobbleVx(0.0f), wobbleVy(0.0f),
       mouseX(width / 2), mouseY(height / 2), mouseMode(0),
       photonTimer(0.0f)
@@ -123,7 +123,7 @@ void AtomModel::rebuildCloud()
         float p = psi2(r, theta, nVis, orbitalMode);
 
         // rejection with dynamic scale; keeps clear orbital silhouettes
-        float scale = (orbitalMode == 0) ? 1.2f : (orbitalMode == 1 ? 0.8f : 0.35f);
+        float scale = (orbitalMode == 0) ? 2.0f : (orbitalMode == 1 ? 1.35f : 0.85f);
         float accept = std::min(1.0f, p * scale);
         if ((static_cast<float>(rand()) / RAND_MAX) < accept)
         {
@@ -281,15 +281,27 @@ void AtomModel::draw(SDL_Renderer *renderer)
     const int cx = static_cast<int>(width * 0.5f + wobbleX);
     const int cy = static_cast<int>(height * 0.5f + wobbleY);
 
-    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_ADD);
     if (orbitalMode == 0)
-        SDL_SetRenderDrawColor(renderer, 130, 190, 255, 34);
+        SDL_SetRenderDrawColor(renderer, 130, 190, 255, 78);
     else if (orbitalMode == 1)
-        SDL_SetRenderDrawColor(renderer, 160, 255, 170, 42);
+        SDL_SetRenderDrawColor(renderer, 160, 255, 170, 88);
     else
-        SDL_SetRenderDrawColor(renderer, 255, 180, 120, 46);
-    for (const auto &cp : cloud)
-        SDL_RenderDrawPoint(renderer, cx + static_cast<int>(cp.x), cy + static_cast<int>(cp.y));
+        SDL_SetRenderDrawColor(renderer, 255, 180, 120, 95);
+    for (size_t i = 0; i < cloud.size(); i++)
+    {
+        const auto &cp = cloud[i];
+        const int px = cx + static_cast<int>(cp.x);
+        const int py = cy + static_cast<int>(cp.y);
+        SDL_RenderDrawPoint(renderer, px, py);
+        if ((i & 1u) == 0)
+        {
+            SDL_RenderDrawPoint(renderer, px + 1, py);
+            SDL_RenderDrawPoint(renderer, px, py + 1);
+        }
+    }
+
+    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 
     SDL_SetRenderDrawColor(renderer, 255, 190, 90, 255);
     drawFilledCircle(renderer, cx, cy, 10);
